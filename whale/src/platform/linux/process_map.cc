@@ -1,6 +1,7 @@
 #include <string>
 #include <base/logging.h>
 #include <climits>
+#include <cstring>
 #include "platform/linux/process_map.h"
 #include "process_map.h"
 

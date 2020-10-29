@@ -3,6 +3,7 @@
 
 #if defined(linux)
 
+#include <cstring>
 #include "platform/linux/process_map.h"
 
 #endif

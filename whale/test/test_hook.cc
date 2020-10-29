@@ -1,5 +1,5 @@
 #include <whale.h>
-#include <stdlib.h>
+#include <cstring>
 #include <dlfcn.h>
 #include <iostream>
 
@@ -19,9 +19,8 @@ int main() {
 #else
     void *handle = dlopen("libc.so", RTLD_NOW);
 #endif
-    assert(handle != nullptr);
     void *symbol = dlsym(handle, "getenv");
-    assert(symbol != nullptr);
+
     WInlineHookFunction(
             symbol,
             reinterpret_cast<void *>(Hooked_getenv),

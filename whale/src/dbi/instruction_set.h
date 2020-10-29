@@ -63,7 +63,7 @@ InstructionSet GetInstructionSetFromString(const char *instruction_set);
 NO_RETURN void InstructionSetAbort(InstructionSet isa);
 
 
-constexpr bool Is64BitInstructionSet(InstructionSet isa) {
+inline bool Is64BitInstructionSet(InstructionSet isa) {
     switch (isa) {
         case InstructionSet::kArm:
         case InstructionSet::kThumb2:
@@ -82,7 +82,7 @@ constexpr bool Is64BitInstructionSet(InstructionSet isa) {
     InstructionSetAbort(isa);
 }
 
-constexpr size_t GetInstructionSetInstructionAlignment(InstructionSet isa) {
+inline size_t GetInstructionSetInstructionAlignment(InstructionSet isa) {
     switch (isa) {
         case InstructionSet::kArm:
             // Fall-through.

@@ -87,12 +87,12 @@ class X86ManagedRegister : public ManagedRegister {
                                         (kNumberOfCpuRegIds + kNumberOfXmmRegIds));
     }
 
-    constexpr Register AsRegisterPairLow() const {
+    Register AsRegisterPairLow() const {
         // Appropriate mapping of register ids allows to use AllocIdLow().
         return FromRegId(AllocIdLow()).AsCpuRegister();
     }
 
-    constexpr Register AsRegisterPairHigh() const {
+    Register AsRegisterPairHigh() const {
         // Appropriate mapping of register ids allows to use AllocIdHigh().
         return FromRegId(AllocIdHigh()).AsCpuRegister();
     }

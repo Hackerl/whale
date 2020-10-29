@@ -1,4 +1,6 @@
 #include "platform/linux/elf_image.h"
+#include <cstring>
+#include <bits/stdc++.h>
 
 #define SHT_GNU_HASH 0x6ffffff6
 

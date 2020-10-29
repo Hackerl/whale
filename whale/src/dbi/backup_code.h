@@ -2,6 +2,7 @@
 #define ARCH_BACKUP_CODE_H_
 
 #include <memory>
+#include <cstring>
 #include "base/primitive_types.h"
 #include "base/macros.h"
 #include "base/logging.h"

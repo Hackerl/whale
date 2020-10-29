@@ -15,6 +15,9 @@ if (CMAKE_SYSTEM_NAME MATCHES "^Android")
     set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -s -Wl,--gc-sections")
     add_definitions("-DWHALE_ANDROID_AUTO_LOAD")
     message("Building Whale for Android(${CMAKE_SYSTEM_PROCESSOR})...")
+elseif(CMAKE_SYSTEM_NAME STREQUAL "Linux")
+    set(KERNEL "Linux")
+    message("Building Whale for Linux(${CMAKE_SYSTEM_PROCESSOR})...")
 elseif (PLATFORM STREQUAL "IOS")
     set(KERNEL "Darwin")
     add_definitions("-DDARWIN")
@@ -143,7 +146,7 @@ elseif (CMAKE_SYSTEM_PROCESSOR MATCHES "^(i.86|x86?)$")
 
 elseif (CMAKE_SYSTEM_PROCESSOR MATCHES "^x86_64")
 
-    set(CMAKE_ASM_FLAGS "${CMAKE_ASM_FLAGS} -arch x86_64")
+    # set(CMAKE_ASM_FLAGS "${CMAKE_ASM_FLAGS} -arch x86_64")
     set(WHALE_SOURCES ${WHALE_SOURCES} ${WHALE_X86_64} ${WHALE_DISASSEMBLER_X86_OR_X86_64})
 
 endif ()

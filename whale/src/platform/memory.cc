@@ -1,4 +1,5 @@
 #include <sys/mman.h>
+#include <cstring>
 #include "platform/memory.h"
 #include "base/align.h"
 #include "base/cxx_helper.h"
